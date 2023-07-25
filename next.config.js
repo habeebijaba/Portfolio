@@ -25,5 +25,12 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = {...nextConfig,
+  env: {
+    // Define your custom environment variables here
+    serviceID: process.env.serviceID,
+    templateID:process.env.templateID,
+    publicKey:process.env.publicKey
+
+  },}
 

@@ -6,7 +6,7 @@
   gap: 20px;
 }
 .form {
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -23,8 +23,53 @@
 .button {
   padding: 15px;
   cursor: pointer;
-  background-color: #53c28b;
+  background-color: #2f86d4;
   color: white;
   border: none;
   border-radius: 5px;
+}
+.linkContainer {
+  display: flex;
+  width: 400px;
+  justify-content: right;
+  font-size: 13px;
+}
+.link {
+  color: #0d87f3;
+}
+.socialmediaButtons {
+  display: flex;
+  gap: 10px;
+}
+.socialmediabutton {
+  display: flex;
+  align-items: center;
+  /* padding: 10px 20px; */
+  padding: 5px;
+  /* background-color: #3e65b7; */
+  border-radius: 5px;
+  border: none;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  color: #fff;
+  cursor: pointer;
+}
+.socialmediabutton:nth-child(1) {
+  background-color: #db4437;
+}
+.socialmediabutton:nth-child(2) {
+  background-color: #333333;
+}
+.socialmediabutton:nth-child(3) {
+  background-color: #3e65b7;
+}
+
+.logo {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.buttontext {
+  font-size: 16px;
+  font-weight: 300;
 }

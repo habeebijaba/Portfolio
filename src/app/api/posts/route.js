@@ -18,3 +18,20 @@ export const GET = async (request) => {
 
     }
 }
+
+export const POST = async (request) => {
+    console.log("call at serverer");
+    const body = await request.json();
+    console.log('body', body);
+    try {
+        await connection()
+        let post=new Post({...body})
+        await post.save()
+        return new NextResponse("Post has been created", { status: 200 })
+
+    } catch (error) {
+        return new NextResponse("Database error", { status: 500 })
+        
+    }
+
+}

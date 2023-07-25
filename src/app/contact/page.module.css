@@ -45,3 +45,19 @@
   font-weight: 400;
   border-radius: 3px;
 }
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+  width: 100px;
+  cursor: pointer;
+  background-color: #2f86d4;
+  border: none;
+  border-radius: 5px;
+}
+.buttonText{
+  font-size: 15px;
+  font-weight: 500;
+}

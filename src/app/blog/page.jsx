@@ -52,7 +52,7 @@ const blog = async () => {
             <Button url={`/blog/${item._id}`} text="Read more" />
           </div>
           <div className={styles.imgContainer}>
-            <Image className={styles.image} src={Photo} alt="" fill={true} />
+            <Image className={styles.image} src={item.img} alt="" fill={true} />
           </div>
         </div>
       ))}

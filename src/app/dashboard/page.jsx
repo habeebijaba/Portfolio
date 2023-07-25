@@ -55,6 +55,14 @@ const dashboard = () => {
     });
   };
 
+  const handleEdit=()=>{
+    Swal.fire(
+      'Sorry !',
+      'This feature will implemented soon !',
+      'question'
+    )
+  }
+
   if (session.status === "loading") {
     return <LoadingComponent />;
   }
@@ -82,7 +90,7 @@ const dashboard = () => {
                 <td>{index + 1}</td>
                 <td>{item.title}</td>
                 <td>
-                  <Image className={styles.image} src={Photo} alt="" />
+                  <Image className={styles.image} src={item.img} alt="" width={80} height={80} />
                 </td>
                 <td>
                   <button

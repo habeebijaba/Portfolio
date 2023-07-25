@@ -1,9 +1,10 @@
 .container {
-  padding: 20px;
+  padding: 10px;
   cursor: pointer;
-  background-color: #53c28b;
+  background-color: #2f86d4;
   color: white;
   border: none;
   border-radius: 5px;
   max-width: max-content;
+  font-size: 20px;
 }

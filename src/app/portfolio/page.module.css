@@ -20,10 +20,10 @@
   background-size: cover !important;
 }
 .item:nth-child(1) {
-  background: url("/illustration.png");
+  background: url("/personal2.png");
 }
 .item:nth-child(2) {
-  background: url("/websites.jpg");
+  background: url("/personal.png");
 }
 .item:nth-child(3) {
   background: url("/application.jpg");
@@ -37,5 +37,5 @@
 }
 
 .item:hover .title {
-  color: #53c28b;
+  color: #2f86d4;
 }

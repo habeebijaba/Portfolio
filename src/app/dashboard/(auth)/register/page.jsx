@@ -37,6 +37,8 @@ const register = () => {
 
   return (
     <div className={styles.container}>
+      <h1>Register</h1>
+
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"
@@ -61,7 +63,7 @@ const register = () => {
         </button>
       </form>
       {error && "oops something went wrong"}
-      <Link href="/dashboard/login">Login with existing account</Link>
+      <Link  href="/dashboard/login">Login with existing account</Link>
     </div>
   );
 };
