@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Photo from "/public/illustration.png";
-import Link from "next/link";
 import Button from "@/components/button/Button";
+import dynamic from "next/dynamic";
 
 export const metadata = {
   title: "Habeeb Ijaba Blog page",
@@ -21,38 +20,27 @@ async function getData() {
 
   return res.json();
 }
-
-const blog = async () => {
+const ImageWrapper = dynamic(() => import("next/image"), { ssr: false });
+const Blog = async () => {
   const data = await getData();
   return (
-    // <div className={styles.container}>
-    //   {data.map((item) => (
-    //     <Link href={`/blog/${item._id}`} key={item.id}>
-    //       <div className={styles.item}>
-    //         <div className={styles.imgContainer}>
-    //           <Image className={styles.img} src={Photo} fill={true} alt="" />
-    //         </div>
-    //         <div className={styles.content}>
-    //           <h3 className={styles.title}>{item.title}</h3>
-    //           <p className={styles.description}>
-    //            {item.desc}
-    //           </p>
-    //           <Button url={`/blog/${item._id}`} text="Read more" />
-    //         </div>
-    //       </div>
-    //     </Link>
-    //   ))}
-    // </div>
     <div className={styles.container}>
       {data.map((item) => (
-        <div className={styles.item}>
+        <div key={item._id} className={styles.item}>
           <div className={styles.content}>
             <h3 className={styles.title}>{item.title}</h3>
             <p className={styles.description}>{item.desc}</p>
             <Button url={`/blog/${item._id}`} text="Read more" />
           </div>
           <div className={styles.imgContainer}>
-            <Image className={styles.image} src={item.img} alt="" fill={true} />
+            <ImageWrapper
+              priority={false}
+              className={styles.image}
+              src={item.img}
+              alt=""
+              width={400}
+              height={400}
+            />
           </div>
         </div>
       ))}
@@ -60,4 +48,4 @@ const blog = async () => {
   );
 };
 
-export default blog;
+export default Blog;

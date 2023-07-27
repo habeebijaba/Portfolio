@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Photo from "/public/application.jpg";
 import { notFound } from "next/navigation";
-import moment from 'moment'
+import moment from "moment";
 
 async function getData(id) {
   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
@@ -23,7 +22,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const blogpost = async ({ params }) => {
+const Blogpost = async ({ params }) => {
   const data = await getData(params.id);
   const htmlcontent = data.content;
   return (
@@ -43,10 +42,17 @@ const blogpost = async ({ params }) => {
             <div>
               <span className={styles.username}>
                 {data.username}
-                <img src="/badge.png" alt="badge" className={styles.badge} />
+                <Image
+                  src="/badge.png"
+                  alt="badge"
+                  width={15}
+                  height={15}
+                  className={styles.badge}
+                />
               </span>
-            <p className={styles.date}>posted {moment(data.createdAt).fromNow()}</p>
-              
+              <p className={styles.date}>
+                posted {moment(data.createdAt).fromNow()}
+              </p>
             </div>
           </div>
         </div>
@@ -63,4 +69,4 @@ const blogpost = async ({ params }) => {
   );
 };
 
-export default blogpost;
+export default Blogpost;

@@ -7,7 +7,7 @@ import bcrypt from "bcrypt"
 
 const handler = NextAuth({
   providers: [
-    
+
     CredentialsProvider({
       id: "credentials",
       name: "Credentials",
@@ -20,7 +20,6 @@ const handler = NextAuth({
           });
 
           if (user) {
-            console.log(user, "user is herte");
             const isPasswordCorrect = await bcrypt.compare(
               credentials.password,
               user.password

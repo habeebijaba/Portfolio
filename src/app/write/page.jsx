@@ -1,11 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import ReactQuill from "react-quill";
+// import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import Swal from "sweetalert2";
 import styles from "./page.module.css";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic"; 
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const Write = () => {
   const state = {};
@@ -13,13 +16,11 @@ const Write = () => {
   const [value, setValue] = useState(state?.desc || "");
   const [title, setTitle] = useState(state?.title || "");
   const [desc, setDesc] = useState(state?.desc || "");
-
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState(state?.cat || "");
-  const img = state?.img || "";
 
   const session = useSession();
-  const router=useRouter()
+  const router = useRouter();
 
   const upload = async () => {
     try {
@@ -61,7 +62,7 @@ const Write = () => {
         method: "POST",
         body: jsonData,
       });
-      router.push('/dashboard')
+      router.push("/dashboard");
       Swal.fire({
         position: "center",
         icon: "success",
@@ -74,13 +75,9 @@ const Write = () => {
     }
   };
 
-  const handlesaveDraft=()=>{
-    Swal.fire(
-      'Sorry !',
-      'This feature will implemented soon !',
-      'question'
-    )
-  }
+  const handlesaveDraft = () => {
+    Swal.fire("Sorry !", "This feature will implemented soon !", "question");
+  };
 
   return (
     <div className={styles.add}>
@@ -131,7 +128,9 @@ const Write = () => {
             Upload Image
           </label>
           <div className={styles.buttons}>
-            <button className={styles.button}onClick={handlesaveDraft}>Save as draft</button>
+            <button className={styles.button} onClick={handlesaveDraft}>
+              Save as draft
+            </button>
             <button className={styles.button} onClick={handleClick}>
               Publish
             </button>

@@ -6,8 +6,9 @@ import { useRouter } from "next/navigation";
 import LoadingComponent from "@/components/Loading/Loading";
 import Swal from "sweetalert2";
 import Link from "next/link";
+import Image from "next/image";
 
-const login = () => {
+const Login = () => {
   const session = useSession();
   const router = useRouter();
 
@@ -51,8 +52,12 @@ const login = () => {
         </button>
       </form>
       <div className={styles.linkContainer}>
-        <p>Not a member ? <Link className={styles.link} href="/dashboard/register">Register</Link></p>
-
+        <p>
+          Not a member ?{" "}
+          <Link className={styles.link} href="/dashboard/register">
+            Register
+          </Link>
+        </p>
       </div>
       <h1>Login</h1>
 
@@ -62,20 +67,20 @@ const login = () => {
           className={styles.socialmediabutton}
           onClick={() => signIn("google")}>
           {" "}
-          <img className={styles.logo} src="/google.png" alt="google" />{" "}
+          <Image height={20} width={20}  className={styles.logo} src="/google.png" alt="google" />{" "}
           <span className={styles.buttontext}>Google</span>
         </button>
         <button
           className={styles.socialmediabutton}
           onClick={loginWithSocialmedia}>
-          <img className={styles.logo} src="/git.png" alt="github" />{" "}
+          <Image height={20} width={20}  className={styles.logo} src="/git.png" alt="github" />{" "}
           <span className={styles.buttontext}>GitHub</span>
         </button>
         <button
           className={styles.socialmediabutton}
           onClick={loginWithSocialmedia}>
           {" "}
-          <img className={styles.logo} src="/1.png" alt="facebook" />{" "}
+          <Image height={20} width={20}  className={styles.logo} src="/1.png" alt="facebook" />{" "}
           <span className={styles.buttontext}>facebook</span>
         </button>
       </div>
@@ -83,4 +88,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

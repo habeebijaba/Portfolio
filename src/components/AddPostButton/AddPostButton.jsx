@@ -5,9 +5,9 @@ import Link from "next/link";
 const NewPostButton = () => {
   return (
     <Link href="/write">
-    <button className={styles.newPostButton}>
-      <span className={styles.plusSign}>+</span>
-    </button>
+      <button className={styles.newPostButton}>
+        <span className={styles.plusSign}>+</span>
+      </button>
     </Link>
   );
 };

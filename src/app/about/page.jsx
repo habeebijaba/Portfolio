@@ -8,7 +8,7 @@ export const metadata = {
   description: "This is About page",
 };
 
-const about = () => {
+const About = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
@@ -29,7 +29,6 @@ const about = () => {
         <div className={styles.item}>
           <h1 className={styles.title}>Who Am I?</h1>
           <p className={styles.description}>
-            {" "}
             I am a versatile and skilled MERN (MongoDB, Express, React, Node.js)
             stack developer with a wide range of technical expertise. My journey
             in the world of web development has led me to master various
@@ -68,7 +67,6 @@ const about = () => {
         <div className={styles.item}>
           <h1 className={styles.title}>What I Do?</h1>
           <p className={styles.description}>
-            {" "}
             <br />
             <br />
             <b>Full-Stack Development :</b> I have a comprehensive understanding
@@ -107,4 +105,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

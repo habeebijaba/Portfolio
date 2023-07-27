@@ -5,16 +5,13 @@ import Image from "next/image";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 
-const contact = ({ serviceID }) => {
+const Contact = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  //rFLm-JOzXAKHEI-NO
-  //template_u2nt45b
-  //service_jp8h15n
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -92,7 +89,6 @@ const contact = ({ serviceID }) => {
             cols="30"
             onChange={handleChange}
             rows="10"></textarea>
-          {/* <Button url="#" text="send" /> */}
           <button className={styles.button} type="submit">
             <span className={styles.buttonText}>
               {loading ? "sending ..." : "send"}
@@ -104,4 +100,4 @@ const contact = ({ serviceID }) => {
   );
 };
 
-export default contact;
+export default Contact;

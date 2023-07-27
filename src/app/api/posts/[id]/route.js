@@ -18,9 +18,7 @@ export const GET = async (Request, { params }) => {
 }
 
 export const DELETE = async (Request, { params }) => {
-    console.log("calles ");
     const { id } = params
-    console.log(id,"yhis is id");
 
     try {
         await connection()

@@ -4,14 +4,12 @@ import styles from "./page.module.css";
 import useSWR, { mutate } from "swr";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Button from "@/components/button/Button";
 import Image from "next/image";
-import Photo from "/public/illustration.png";
 import LoadingComponent from "@/components/Loading/Loading";
 import Swal from "sweetalert2";
 import NewPostButton from "@/components/AddPostButton/AddPostButton";
 
-const dashboard = () => {
+const Dashboard = () => {
   const session = useSession();
   const router = useRouter();
 
@@ -55,13 +53,9 @@ const dashboard = () => {
     });
   };
 
-  const handleEdit=()=>{
-    Swal.fire(
-      'Sorry !',
-      'This feature will implemented soon !',
-      'question'
-    )
-  }
+  const handleEdit = () => {
+    Swal.fire("Sorry !", "This feature will implemented soon !", "question");
+  };
 
   if (session.status === "loading") {
     return <LoadingComponent />;
@@ -90,7 +84,13 @@ const dashboard = () => {
                 <td>{index + 1}</td>
                 <td>{item.title}</td>
                 <td>
-                  <Image className={styles.image} src={item.img} alt="" width={80} height={80} />
+                  <Image
+                    className={styles.image}
+                    src={item.img}
+                    alt=""
+                    width={80}
+                    height={80}
+                  />
                 </td>
                 <td>
                   <button
@@ -115,4 +115,4 @@ const dashboard = () => {
   }
 };
 
-export default dashboard;
+export default Dashboard;
