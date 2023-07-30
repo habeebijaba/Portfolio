@@ -64,23 +64,41 @@ const Login = () => {
       <p>With your SocialMedia account</p>
       <div className={styles.socialmediaButtons}>
         <button
-          className={styles.socialmediabutton}
+          className={styles.socialmediabutton} 
           onClick={() => signIn("google")}>
           {" "}
-          <Image height={20} width={20}  className={styles.logo} src="/google.png" alt="google" />{" "}
+          <Image
+            height={20}
+            width={20}
+            className={styles.logo}
+            src="/google.png"
+            alt="google"
+          />{" "}
           <span className={styles.buttontext}>Google</span>
         </button>
         <button
           className={styles.socialmediabutton}
-          onClick={loginWithSocialmedia}>
-          <Image height={20} width={20}  className={styles.logo} src="/git.png" alt="github" />{" "}
+          onClick={() => signIn("github")}>
+          <Image
+            height={20}
+            width={20}
+            className={styles.logo}
+            src="/git.png"
+            alt="github"
+          />{" "}
           <span className={styles.buttontext}>GitHub</span>
         </button>
         <button
           className={styles.socialmediabutton}
-          onClick={loginWithSocialmedia}>
+          onClick={() => signIn("facebook")}>
           {" "}
-          <Image height={20} width={20}  className={styles.logo} src="/1.png" alt="facebook" />{" "}
+          <Image
+            height={20}
+            width={20}
+            className={styles.logo}
+            src="/1.png"
+            alt="facebook"
+          />{" "}
           <span className={styles.buttontext}>facebook</span>
         </button>
       </div>
